@@ -14,7 +14,7 @@ jobs:
       - name: Check if not in master
         id: check_if_master
         run: |
-          if [ ${{ github.ref }} == "refs/heads/master" ]; then
+          if [ ${{ github.ref }} == "refs/heads/master" ] || [ ${{ github.ref }} == "refs/heads/main" ] ; then
             echo "Job cannot run against master. Stopping."
             exit 1
           fi
